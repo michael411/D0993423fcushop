@@ -28,10 +28,10 @@ public class ProductService {
       return connection.createQuery(query).executeAndFetch(Product.class);
     }
   }
-  public List<Product> searchProducts(String keyword) {
+  public List<Product> searchProducts(String name) {
     try (Connection connection = sql2oDbHandler.getConnector().open()) {
       String query = "select ID id, NAME name, IMAGE_URL imageUrl, PRICE price, DESCRIPTION description"
-      + " from PRODUCT  WHERE NAME = '"+keyword+"';";
+      + " from PRODUCT  WHERE NAME = '"+name+"';";
       return connection.createQuery(query).executeAndFetch(Product.class);
     }
   }

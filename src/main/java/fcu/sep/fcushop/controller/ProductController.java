@@ -21,8 +21,8 @@ public class ProductController {
   }
 
   @GetMapping("/Search")
-    public List<Product> searchProducts(@RequestParam String keyword) {
-    return  productManager.searchProducts(keyword);
+    public List<Product> searchProducts(@RequestParam String name) {
+    return  productManager.searchProducts(name);
   }
 
 }
