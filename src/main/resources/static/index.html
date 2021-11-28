@@ -26,7 +26,7 @@
           <a class="nav-link active" aria-current="page" href="#">首頁</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">逢甲商城</a>
+          <a class="nav-link" href="/">逢甲商城</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">一中商城</a>
@@ -36,8 +36,8 @@
             商品管理
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">新增商品</a></li>
-            <li><a class="dropdown-item" href="#">修改商品</a></li>
+            <li><a class="dropdown-item" href="/addProduct.html">新增商品</a></li>
+            <li><a class="dropdown-item" href="/updateProduct.html">修改商品</a></li>
           </ul>
         </li>
       </ul>
@@ -72,6 +72,11 @@
   <div class="input-group mb-3 mt-5">
     <input type="text" class="form-control" placeholder="商品名稱" aria-label="product name" aria-describedby="searchProduct" id="productKeyword">
     <button class="btn btn-outline-secondary" type="button" id="searchProduct">搜尋</button>
+  </div>
+
+  <div class="input-group mb-3 mt-5">
+    <input type="text" class="form-control" placeholder="商品ID" aria-label="product name" aria-describedby="searchProduct" id="productID">
+    <button class="btn btn-outline-secondary" type="button" id="deleteProduct">刪除</button>
   </div>
 
 
@@ -113,6 +118,17 @@
       }
     });
 
+    $('#deleteProduct').click(function() {
+      const keyword = $('#productID').val();
+      if (keyword.trim() === '') {
+        getProducts('products');
+      } else {
+        getProducts('delete/' + keyword);
+        emptyProducts();
+      }
+    });
+
+
     function emptyProducts() {
       $('#productList').empty();
     }
@@ -123,6 +139,7 @@
         html += '<img src="' + product.imageUrl + '" class="card-img-top" alt="' + product.name + '">';
         html += '<div class="card-body">';
         html += '<h5 class="card-title">' + product.name + '</h5>';
+        html += '<p class="card-text">'+'ID:' + product.id + '</p>';
         html += '<p class="card-text">' + product.description + '</p>';
         html += '<a href="#" class="btn btn-primary">' + product.price + '</a>';
         html += '</div>';

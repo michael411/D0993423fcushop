@@ -29,6 +29,7 @@ public class Sql2oDbHandler {
   public Sql2o getConnector() {
     if (connector == null) {
       connector = new Sql2o(jdbcUrl, userName, password);
+      //System.out.println("連線"+jdbcUrl+userName+password);
     }
     return connector;
   }

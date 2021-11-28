@@ -7,7 +7,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class FcushopApplication {
 
   public static void main(String[] args) {
+
     SpringApplication.run(FcushopApplication.class, args);
+    System.out.println("-------------------------------------------");
+    System.out.println("-------------------------------------------");
+    System.out.println("-------------------------------------------");
+    System.out.println("-------------------------------------------");
+    System.out.println("新的開始");
   }
 
 }
+//http://localhost:8080/
