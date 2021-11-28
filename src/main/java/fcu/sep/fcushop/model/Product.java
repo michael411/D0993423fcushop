@@ -1,19 +1,21 @@
 package fcu.sep.fcushop.model;
 
-/** CA. */
 public class Product {
+
   private long id;
+
   private String name;
+
   private String imageUrl;
+
   private int price;
+
   private String description;
 
   public Product() {
   }
 
-  /** CA. */
-  public Product(long id, String name, String imageUrl, int price, String
-          description) {
+  public Product(long id, String name, String imageUrl, int price, String description) {
     this.id = id;
     this.name = name;
     this.imageUrl = imageUrl;
