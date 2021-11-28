@@ -47,7 +47,7 @@ public class ProductService {
   }
   public Object getMaxID() {
     try (Connection connection = sql2oDbHandler.getConnector().open()) {
-      String query = "SELECT max(ID)"+" FROM `fcu_shop`.`product`;";
+      String query = "SELECT max(ID)"+" FROM `fcu_shop.product`;";
       return connection.createQuery(query).executeScalar();
     }
   }
