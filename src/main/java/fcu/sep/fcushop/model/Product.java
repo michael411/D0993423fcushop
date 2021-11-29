@@ -1,5 +1,5 @@
 package fcu.sep.fcushop.model;
-
+///123
 public class Product {
 
   private long id;
